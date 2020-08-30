@@ -9,6 +9,15 @@ client.on('ready', () => {
 });
 
 
+const cannedResponses = [
+  "Thanks for letting us know. We're looking into it.",
+  "Thanks for letting us know. We agree there is an issue and we're looking into it.",
+  "Thanks for letting us know. We agree there is an issue and we've removed the post."
+]
+
+const jokeTLs = {
+  jrelvas: "1.5"
+}
 let commands = {
   ping: function(msg, args){
     msg.reply('Pong!');
@@ -20,18 +29,7 @@ let commands = {
     msg.channel.send(args.join(" "))
   },
   canned: function(msg, args){
-    if(args[0] == 1){
-      msg.channel.send("Thanks for letting us know. We're looking into it.")
-    }
-    else if(args[0] == 2){
-      msg.channel.send("Thanks for letting us know. We agree there is an issue and we're looking into it.")
-    }
-    else if(args[0] == 3){
-      msg.channel.send("Thanks for letting us know. We agree there is an issue and we've removed the post.")
-    }
-    else{
-      msg.channel.send("That canned response isn't in my database, try a number between 1 and 3.")
-    }
+    msg.channel.send(cannedResponses[args[0]] || "That index isn't in my database, try something between 1 and 3.")
   },
   getTL: function(msg, args){
       fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
@@ -44,7 +42,7 @@ let commands = {
 
         // Examine the text in the response
         response.json().then(function(data) {
-          msg.channel.send(`${args[0]}'s trust level is ${data.user.trust_level}`);
+          msg.channel.send(`${args[0]}'s trust level is ${jokeTLs[args[0].toLowerCase()] || data.user.trust_level}`);
         });
       }
     )
