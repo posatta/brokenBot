@@ -16,9 +16,20 @@ let commands = {
     msg.reply('member "ned" diskushen x D')
   },
   say: function(msg, args){
-    msg.reply(args.join(" "))
-  }
+    msg.channel.send(args.join(" "))
+  },
+  help: function(msg, args){
+    msg.channel.send(`
+    \`\`\`
+ping: make the bot reply with pong
+epic_phrase: make the bot reply with an epic phrase
+say: make the bot say something. if you provide LUA as first argument, xapacni will delete your message and only the bot's message will be visible.
+help: it's this noob
 
+    \`\`\`
+    
+    `)
+  }
 }
 
 client.on('message', msg => {
@@ -26,7 +37,7 @@ client.on('message', msg => {
   let args = message.slice(prefix.length).trim().split(' ');
 
   if(message.charAt(0) != prefix){
-    console.log('This message doesnt begin with the prefix.')
+    //console.log('This message doesnt begin with the prefix.')
     return
   }
 
@@ -34,6 +45,10 @@ client.on('message', msg => {
   let cmd = commands[args[0]]
   if (cmd) {
     args.shift()
+
+    if(args[0] == "LUA"){
+      args.shift()
+    }
     cmd(msg, args)
   }
 });
