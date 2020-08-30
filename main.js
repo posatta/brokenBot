@@ -29,7 +29,7 @@ let commands = {
     msg.channel.send(args.join(" "))
   },
   canned: function(msg, args){
-    msg.channel.send(cannedResponses[args[0]] || "That index isn't in my database, try something between 1 and 3.")
+    msg.channel.send(cannedResponses[args[0] - 1] || "That index isn't in my database, try something between 1 and 3.")
   },
   getTL: function(msg, args){
       fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
