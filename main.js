@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const fetch = require("node-fetch");
 const client = new Discord.Client();
 
 const prefix = "-"
@@ -31,6 +32,25 @@ let commands = {
     else{
       msg.channel.send("That canned response isn't in my database, try a number between 1 and 3.")
     }
+  },
+  getTL: function(msg, args){
+      fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
+    .then(
+      function(response) {
+        if (response.status !== 200) {
+          msg.channel.send('Looks like there was a problem. Status Code: ' + response.status);
+          return;
+        }
+
+        // Examine the text in the response
+        response.json().then(function(data) {
+          msg.channel.send(`${args[0]}'s trust level is ${data.user.trust_level}`);
+        });
+      }
+    )
+    .catch(function(err) {
+      msg.channel.send('Fetch Error :-S', err);
+    });
   },
   help: function(msg, args){
     msg.channel.send(`
