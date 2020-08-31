@@ -28,9 +28,9 @@ module.exports = function(msg, args, Discord){
 
         // Examine the text in the response
         response.json().then(function(data) {
-          console.log(data.user.bio_excerpt)
+          console.log(data.user.bio_raw)
           exampleEmbed
-          .setDescription(data.user.bio_excerpt)
+          .setDescription(data.user.bio_raw)
           .addFields(
             { name: 'Trust Level', value: jokeTLs[args[0]] || data.user.trust_level },
             
