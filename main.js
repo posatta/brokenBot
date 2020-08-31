@@ -16,7 +16,8 @@ const cannedResponses = [
 ]
 
 const jokeTLs = {
-  jrelvas: "1.5"
+  jrelvas: "1.5",
+  coefficients : "69"
 }
 let commands = {
   ping: function(msg, args){
@@ -31,7 +32,7 @@ let commands = {
   canned: function(msg, args){
     msg.channel.send(cannedResponses[args[0] - 1] || "That index isn't in my database, try something between 1 and 3.")
   },
-  getTL: function(msg, args){
+  get_tl: function(msg, args){
       fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
     .then(
       function(response) {
@@ -70,8 +71,8 @@ client.on('message', msg => {
     return
   }
 
-  console.log(args[0])
-  let cmd = commands[args[0]]
+  console.log(args[0].toLowerCase())
+  let cmd = commands[args[0].toLowerCase()]
   if (cmd) {
     args.shift()
 
@@ -82,4 +83,4 @@ client.on('message', msg => {
   }
 });
 
-client.login('NzQ5NjMwNTE1NDQyNzQ1MzQ1.X0ux0g.jrb97SjpO49Y1SWyvqQNzawAjkw');
+client.login(process.env.token);
