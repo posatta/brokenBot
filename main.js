@@ -20,13 +20,13 @@ const jokeTLs = {
   coefficients : "69"
 }
 let commands = {
-  ping: require('commands/ping.js'),
-  epic_phrase: require('commands/epic_phrase.js'),
-  say: require('commands/say.js'),
-  canned: require('commands/canned.js'),
-  get_tl: require('commands/get_tl.js'),
-  get_user:  require('commands/get_user.js'),
-  help: require('commands/help.js')
+  ping: require('./commands/ping.js'),
+  epic_phrase: require('./commands/epic_phrase.js'),
+  say: require('./commands/say.js'),
+  canned: require('./commands/canned.js'),
+  get_tl: require('./commands/get_tl.js'),
+  get_user:  require('./commands/get_user.js'),
+  help: require('./commands/help.js')
 }
 
 client.on('message', msg => {
