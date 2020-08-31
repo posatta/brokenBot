@@ -31,7 +31,7 @@ module.exports = function(msg, args, Discord){
       .setTitle(args[0])
       .setURL(url)
       .setAuthor(args[0], profilePicture, url)
-      .setDescription(userData.user.bio_excerpt)
+      .setDescription("bio could not be loaded")
       .setThumbnail(profilePicture)
       .addFields(
         { name: 'Regular field title', value: 'Some value here' },
