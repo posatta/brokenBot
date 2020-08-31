@@ -1,5 +1,10 @@
 const fetch = require("node-fetch");
 
+const jokeTLs = {
+    jrelvas: "1.5",
+    coefficients : "69"
+  }
+  
 module.exports = function(msg, args){
     fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
   .then(

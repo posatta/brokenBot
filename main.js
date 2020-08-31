@@ -9,16 +9,9 @@ client.on('ready', () => {
 });
 
 
-const cannedResponses = [
-  "Thanks for letting us know. We're looking into it.",
-  "Thanks for letting us know. We agree there is an issue and we're looking into it.",
-  "Thanks for letting us know. We agree there is an issue and we've removed the post."
-]
 
-const jokeTLs = {
-  jrelvas: "1.5",
-  coefficients : "69"
-}
+
+
 let commands = {
   ping: require('./commands/ping.js'),
   epic_phrase: require('./commands/epic_phrase.js'),
