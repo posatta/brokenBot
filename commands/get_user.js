@@ -25,6 +25,7 @@ module.exports = function(msg, args, Discord){
         response.json().then(function(data) {
           console.log(data.user.bio_excerpt)
           exampleEmbed.setDescription(data.user.bio_excerpt)
+          msg.channel.send(exampleEmbed);
         });
       }
     )
@@ -49,5 +50,5 @@ module.exports = function(msg, args, Discord){
       
       
 
-    msg.channel.send(exampleEmbed);
+    
   }
