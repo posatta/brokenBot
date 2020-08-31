@@ -52,13 +52,16 @@ let commands = {
     });
   },
   get_user: function(msg, args){
+
+    let url = `https://devforum.roblox.com/u/${args[0]}/summary`
+    let profilePicture = `https://doy2mn9upadnk.cloudfront.net/user_avatar/devforum.roblox.com/${args[0]}/120/1144704_2.png`
     const exampleEmbed = new Discord.MessageEmbed()
       .setColor('#0099ff')
-      .setTitle('Some title')
-      .setURL('https://discord.js.org/')
-      .setAuthor('Some name', 'https://i.imgur.com/wSTFkRM.png', 'https://discord.js.org')
+      .setTitle(args[0])
+      .setURL(url)
+      .setAuthor(args[0], profilePicture, url)
       .setDescription('Some description here')
-      .setThumbnail('https://i.imgur.com/wSTFkRM.png')
+      .setThumbnail(profilePicture)
       .addFields(
         { name: 'Regular field title', value: 'Some value here' },
         { name: '\u200B', value: '\u200B' },
@@ -66,9 +69,9 @@ let commands = {
         { name: 'Inline field title', value: 'Some value here', inline: true },
       )
       .addField('Inline field title', 'Some value here', true)
-      .setImage('https://i.imgur.com/wSTFkRM.png')
+      .setImage(profilePicture)
       .setTimestamp()
-      .setFooter('Some footer text here', 'https://i.imgur.com/wSTFkRM.png');
+      .setFooter('Some footer text here', profilePicture);
 
     msg.channel.send(exampleEmbed);
   },
