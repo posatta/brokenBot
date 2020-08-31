@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 module.exports = function(msg, args){
 
     let userData = {}

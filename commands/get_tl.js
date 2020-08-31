@@ -1,3 +1,5 @@
+const fetch = require("node-fetch");
+
 module.exports = function(msg, args){
     fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
   .then(
