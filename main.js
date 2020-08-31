@@ -39,7 +39,7 @@ client.on('message', msg => {
     if(args[0] == "LUA"){
       args.shift()
     }
-    cmd(msg, args)
+    cmd(msg, args, Discord)
   }
 });
 

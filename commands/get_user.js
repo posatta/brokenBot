@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-module.exports = function(msg, args){
+module.exports = function(msg, args, Discord){
 
     let userData = {}
     fetch(`https://devforum.roblox.com/u/${args[0]}.json`)
