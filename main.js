@@ -20,7 +20,8 @@ let commands = {
   "get_tl": require('./commands/get_tl.js'),
   "get_user":  require('./commands/get_user.js'),
   "help": require('./commands/help.js'),
-  "8ball": require('./commands/8ball.js')
+  "8ball": require('./commands/8ball.js'),
+  "kick": require('./commands/kick.js')
 }
 
 client.on('message', msg => {
@@ -40,7 +41,7 @@ client.on('message', msg => {
     if(args[0] == "LUA"){
       args.shift()
     }
-    cmd(msg, args, Discord)
+    cmd(msg, args, Discord, client)
   }
 });
 
