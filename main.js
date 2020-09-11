@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const fetch = require("node-fetch");
 const client = new Discord.Client();
-
+const token = process.env.token;
 const prefix = "-"
 
 client.on('ready', () => {
@@ -43,4 +43,4 @@ client.on('message', msg => {
   }
 });
 
-client.login(process.env.token);
+client.login(token);
