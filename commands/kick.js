@@ -20,12 +20,12 @@ module.exports = function(msg, args, disc, client){
 
         let reason = args.join(" ");
 
-        victim.kick(reason).then((victim) => {
+        victim.kick(reason).then(() => {
             // Successmessage
             msg.channel.send(":wave: " + victim.displayName + " has been successfully kicked! :partying_face:");
-        }).catch(() => {
+        }).catch((err) => {
              // Failmessage
-             msg.channel.send("An error occured.");
+             msg.channel.send(`An error occured: ${err}`);
         });
     }
     
