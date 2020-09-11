@@ -13,7 +13,7 @@ function getUserFromMention(mention, client) {
 }
 
 module.exports = function(msg, args, disc, client){
-    if(msg.author.hasPermission('KICK_MEMBERS')){
+    if(msg.member.hasPermission('KICK_MEMBERS')){
         let victim = getUserFromMention(args[0], client);
         victim.kick(args[1]);
     }
