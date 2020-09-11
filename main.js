@@ -22,6 +22,7 @@ let commands = {
   "help": require('./commands/help.js'),
   "8ball": require('./commands/8ball.js'),
   "kick": require('./commands/kick.js'),
+  "ban": require('./commands/ban.js'),
   "bee": require('./commands/beemoviequote.js')
 }
 
