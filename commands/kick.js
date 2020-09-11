@@ -22,10 +22,10 @@ module.exports = function(msg, args, disc, client){
 
         victim.kick(reason).then((victim) => {
             // Successmessage
-            message.channel.send(":wave: " + victim.displayName + " has been successfully kicked! :partying_face:");
+            msg.channel.send(":wave: " + victim.displayName + " has been successfully kicked! :partying_face:");
         }).catch(() => {
              // Failmessage
-            message.channel.send("An error occured.");
+             msg.channel.send("An error occured.");
         });
     }
     
