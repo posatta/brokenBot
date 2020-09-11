@@ -8,7 +8,7 @@ function getUserFromMention(mention, msg) {
 			mention = mention.slice(1);
 		}
 
-		return msg.guild.members.cache.get()(mention);
+		return msg.guild.members.get()(mention);
 	}
 }
 
