@@ -1,4 +1,4 @@
-function getUserFromMention(mention, client) {
+function getUserFromMention(mention, msg) {
 	if (!mention) return;
 
 	if (mention.startsWith('<@') && mention.endsWith('>')) {
@@ -8,14 +8,18 @@ function getUserFromMention(mention, client) {
 			mention = mention.slice(1);
 		}
 
-		return client.users.cache.get(mention);
+		return msg.guild.members.cache.get()(mention);
 	}
 }
 
 module.exports = function(msg, args, disc, client){
     if(msg.member.hasPermission('KICK_MEMBERS')){
-        let victim = getUserFromMention(args[0], client);
-        victim.kick(args[1]);
+        let victim = getUserFromMention(args[0], msg);
+
+        args.shift();
+
+        let reason = args.join(" ");
+        victim.kick(reason);
     }
     
 }
