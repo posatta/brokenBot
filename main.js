@@ -13,13 +13,14 @@ client.on('ready', () => {
 
 
 let commands = {
-  ping: require('./commands/ping.js'),
-  epic_phrase: require('./commands/epic_phrase.js'),
-  say: require('./commands/say.js'),
-  canned: require('./commands/canned.js'),
-  get_tl: require('./commands/get_tl.js'),
-  get_user:  require('./commands/get_user.js'),
-  help: require('./commands/help.js')
+  "ping": require('./commands/ping.js'),
+  "epic_phrase": require('./commands/epic_phrase.js'),
+  "say": require('./commands/say.js'),
+  "canned": require('./commands/canned.js'),
+  "get_tl": require('./commands/get_tl.js'),
+  "get_user":  require('./commands/get_user.js'),
+  "help": require('./commands/help.js'),
+  "8ball": require('./commands/8ball.js')
 }
 
 client.on('message', msg => {
