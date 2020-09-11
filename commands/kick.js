@@ -16,6 +16,9 @@ module.exports = function(msg, args, disc, client){
     if(msg.member.hasPermission('KICK_MEMBERS')){
         let victim = getMemberFromMention(args[0], msg);
 
+        if(!victim){
+            return;
+        }
         args.shift();
 
         let reason = args.join(" ");
