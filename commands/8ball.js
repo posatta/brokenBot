@@ -25,7 +25,7 @@ function getRandomInt(max) {
 }
 
 module.exports = function(msg, args){
-    msg.channel.send(responses[getRandomInt(responses.length - 1)])
+    msg.channel.send(responses[getRandomInt(responses.length - 1)]);
 }
 
 /*

@@ -5,5 +5,5 @@ const cannedResponses = [
 ]
 
 module.exports = function(msg, args){
-    msg.channel.send(cannedResponses[args[0] - 1] || "That index isn't in my database, try something between 1 and 3.")
+    msg.channel.send(cannedResponses[args[0] - 1] || "That index isn't in my database, try something between 1 and 3.");
 }

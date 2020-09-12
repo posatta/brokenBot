@@ -9,5 +9,5 @@ get_tl: get TL of a user
 get_user: view some spicy info of a user
 8ball: bot will respond with random funny
 kick: kick a user. don't try this if u dont have perms u noob
-    \`\`\``)
+    \`\`\``);
   }

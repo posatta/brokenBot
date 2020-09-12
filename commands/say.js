@@ -1,3 +1,3 @@
 module.exports = function(msg, args){
-    msg.channel.send(args.join(" "))
+    msg.channel.send(args.join(" "));
 }
