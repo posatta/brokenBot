@@ -27,23 +27,23 @@ let commands = {
 }
 
 client.on('message', msg => {
-  const message = msg.content
+  const message = msg.content;
   let args = message.slice(prefix.length).trim().split(' ');
 
   if(message.charAt(0) != prefix){
-    //console.log('This message doesnt begin with the prefix.')
-    return
+    //console.log('This message doesnt begin with the prefix.');
+    return;
   }
 
-  console.log(args[0].toLowerCase())
-  let cmd = commands[args[0].toLowerCase()]
+  console.log(args[0].toLowerCase());
+  let cmd = commands[args[0].toLowerCase()];
   if (cmd) {
-    args.shift()
+    args.shift();
 
     if(args[0] == "LUA"){
-      args.shift()
+      args.shift();
     }
-    cmd(msg, args, Discord, client)
+    cmd(msg, args, Discord, client);
   }
 });
 
