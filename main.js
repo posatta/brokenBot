@@ -27,6 +27,8 @@ let commands = {
 }
 
 client.on('message', msg => {
+  if (msg.author.bot) { return; };
+
   const message = msg.content;
   let args = message.slice(prefix.length).trim().split(' ');
 
